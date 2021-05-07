@@ -15,16 +15,9 @@ distintos de la lista de colores antes creada en las lineas 20 y 21.
 ahora seleccionan un color diferente cada vez que se arranca el juego gracias
 a las modificaciones antes mencionadas.
 
-Modificaciones al juego de mover la comida
-Se agrego una condicional donde si la comida estaba en un lugar diferente a la
-snake se moviera un cuadrito a cualquier direccion en la linea 22 esto posible
-gracias al comando food.(x o y) += randrange(cordenadas)*(cuadritos que se
-mueve)
-
 --- Codigo fuente ---
 El archivo fuente donde se hicieron las modificaciones no es de nuestra propiedad, 
 fue obtenido de las librerias de freegames de python, el archivo original es paint.py
 puede revisarse un poco de la libreria y de los archivos originales de los juegos en la siguiente URL:
 http://www.grantjenks.com/docs/freegames/
-
 -
