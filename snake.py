@@ -16,7 +16,16 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-
+colores = ['blue', 'black', 'yellow', 'green', 'white']
+s = randrange(-15, 15) % 4
+f = randrange(-15, 15) % 4
+"""num = int(1)
+c = int(num % 5)
+print (randrange(-1, 1))
+print ("c: " + str(c) + "  num: " + str(num))"""
+while f == s:
+    f = randrange(-15, 15) % 4
+    
 def change(x, y):
     "Change snake direction."
     aim.x = x
@@ -30,27 +39,34 @@ def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
-
+    "c = 0"
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
         update()
         return
 
     snake.append(head)
-
     if head == food:
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
+        """if c == 0:
+            food.x += randrange(-1, 1)
+            food.y += randrange(-1, 1)
+            num += 1
+            c = num % 5
+        else:
+            num += 1
+            c = num % 5"""
 
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, colores[s])
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, colores[f])
     update()
     ontimer(move, 100)
 
